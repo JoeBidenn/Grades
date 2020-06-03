@@ -24,7 +24,7 @@ name = input("name: ")
 
 print("="*50, "CHECKING DATABASE", "="*51)
 def custom_len(value):
-    # These characters take up more space
+    
    
 
     total = 0
