@@ -1,129 +1,94 @@
-# Byte-compiled / optimized / DLL files
-__pycache__/
-*.py[cod]
-*$py.class
+import time 
+import sys
+import progressbar
 
-# C extensions
-*.so
+print("="*53, "LCSD GRADES", "="*54)
 
-# Distribution / packaging
-.Python
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-wheels/
-pip-wheel-metadata/
-share/python-wheels/
-*.egg-info/
-.installed.cfg
-*.egg
-MANIFEST
+grades = input("username: ")
+time.sleep(1)
+if grades == "maiko":
+ 	print("")
+else:
+	print("unsuccessful!")
+	exit(0)
 
-# PyInstaller
-#  Usually these files are written by a python script from a template
-#  before PyInstaller builds the exe, so as to inject date/other infos into it.
-*.manifest
-*.spec
+grades = input("password: ")
+time.sleep(1)
+if grades == "admin":
+	print("")
+else:
+	print("unsuccessful!")
+	exit(0)
 
-# Installer logs
-pip-log.txt
-pip-delete-this-directory.txt
+name = input("name: ")
 
-# Unit test / coverage reports
-htmlcov/
-.tox/
-.nox/
-.coverage
-.coverage.*
-.cache
-nosetests.xml
-coverage.xml
-*.cover
-*.py,cover
-.hypothesis/
-.pytest_cache/
+print("="*50, "CHECKING DATABASE", "="*51)
+def custom_len(value):
+    # These characters take up more space
+   
 
-# Translations
-*.mo
-*.pot
+    total = 0
+    for c in value:
+        total += characters.get(c, 1)
 
-# Django stuff:
-*.log
-local_settings.py
-db.sqlite3
-db.sqlite3-journal
+    return total
 
-# Flask stuff:
-instance/
-.webassets-cache
 
-# Scrapy stuff:
-.scrapy
+bar = progressbar.ProgressBar(
+    widgets=[
+        ' ',
+        progressbar.Bar(),
+        ' ',
+        progressbar.Counter(format='%(value)02d/%(max_value)d'),
+    ],
+    len_func=custom_len,
+)
+for i in bar(range(10)):
+    time.sleep(.5)
 
-# Sphinx documentation
-docs/_build/
+print(name + " found!")
+time.sleep(2)
+print("")
 
-# PyBuilder
-target/
+grades = input("change " +  name + "'s" + " grades (y/n): ")
+time.sleep(1)
+if grades == "y":
+	print("")
+else:
+	exit(0)
 
-# Jupyter Notebook
-.ipynb_checkpoints
+input("what percentage?: ")
 
-# IPython
-profile_default/
-ipython_config.py
+print("="*52, "CHANGING GRADES", "="*51)
+def custom_len(value):
+    # These characters take up more space
+   
 
-# pyenv
-.python-version
+    total = 0
+    for c in value:
+        total += characters.get(c, 1)
 
-# pipenv
-#   According to pypa/pipenv#598, it is recommended to include Pipfile.lock in version control.
-#   However, in case of collaboration, if having platform-specific dependencies or dependencies
-#   having no cross-platform support, pipenv may install dependencies that don't work, or not
-#   install all needed dependencies.
-#Pipfile.lock
+    return total
 
-# PEP 582; used by e.g. github.com/David-OConnor/pyflow
-__pypackages__/
 
-# Celery stuff
-celerybeat-schedule
-celerybeat.pid
+bar = progressbar.ProgressBar(
+    widgets=[
+        ' ',
+        progressbar.Bar(),
+        ' ',
+        progressbar.Counter(format='%(value)02d/%(max_value)d'),
+    ],
+    len_func=custom_len,
+)
+for i in bar(range(10)):
+    time.sleep(3)
+print("finished grading!")
 
-# SageMath parsed files
-*.sage.py
+time.sleep(1)
 
-# Environments
-.env
-.venv
-env/
-venv/
-ENV/
-env.bak/
-venv.bak/
+print("grades changed!")
 
-# Spyder project settings
-.spyderproject
-.spyproject
+time.sleep(7)
+exit(0)
+	
 
-# Rope project settings
-.ropeproject
-
-# mkdocs documentation
-/site
-
-# mypy
-.mypy_cache/
-.dmypy.json
-dmypy.json
-
-# Pyre type checker
-.pyre/
